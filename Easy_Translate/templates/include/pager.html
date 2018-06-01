@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span{
+            color: white;
+        }
+        .left{
+            position: absolute;
+	        left: 10%;
+            margin-right: 20px;
+        }
+        .left a{
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="left">
+{% if posts.has_previous %}
+    <a href="/showdiary.html?p={{ posts.previous_page_number }}">上一页</a>
+    {% else %}
+    <a href="#">上一页</a>
+{% endif %}
+
+{% if posts.has_next %}
+    <a href="/showdiary.html?p={{ posts.next_page_number }}">下一页</a>
+{% endif %}
+
+<span>
+    {{ posts.number }} / {{ posts.paginator.num_pages }}
+</span>
+</div>
+</body>
+</html>
