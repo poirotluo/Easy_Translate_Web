@@ -157,7 +157,7 @@ def deleteit(req):
 
 
 def file_down(request):
-    file=open('static/Quick词典.zip','rb')
+    file=open('static/Quick词典.7z','rb')
     response =FileResponse(file)
     response['Content-Type']='application/octet-stream'
     response['Content-Disposition']='attachment;filename="Quick词典.zip"'
